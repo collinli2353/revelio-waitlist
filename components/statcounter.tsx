@@ -1,4 +1,5 @@
 import Script from "next/script";
+import Image from "next/image";
 
 export default function StatCounter() {
   return (
@@ -21,10 +22,12 @@ export default function StatCounter() {
             href="https://statcounter.com/"
             target="_blank"
             rel="noopener noreferrer">
-            <img
+            <Image
               className="statcounter"
               src="https://c.statcounter.com/13109507/0/16bd1cac/1/"
               alt="website statistics"
+              width={1}
+              height={1}
               referrerPolicy="no-referrer-when-downgrade"
             />
           </a>
