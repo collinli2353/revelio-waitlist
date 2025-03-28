@@ -12,6 +12,7 @@ import Footer from "@/components/footer";
 export default function Home() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [social, setSocial] = useState<string>(""); // New state for "Other Social"
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +21,10 @@ export default function Home() {
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
+  };
+
+  const handleSocialChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSocial(event.target.value); // Update "Other Social" state
   };
 
   const isValidEmail = (email: string) => {
@@ -67,7 +72,7 @@ export default function Home() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, email }),
+          body: JSON.stringify({ name, email, social }), // Include "social"
         });
 
         if (!notionResponse.ok) {
@@ -89,6 +94,7 @@ export default function Home() {
       success: (data) => {
         setName("");
         setEmail("");
+        setSocial(""); // Clear "Other Social" field
         return "Thank you for joining the waitlist 🎉";
       },
       error: (error) => {
@@ -115,16 +121,29 @@ export default function Home() {
 
         <CTA />
 
+        <div className="my-8 w-full max-w-4xl">
+          <video
+            src="/DemoVideoAll.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-lg shadow-lg"
+          />
+        </div>
+
         <Form
           name={name}
           email={email}
+          social={social} // Pass "Other Social" value
           handleNameChange={handleNameChange}
           handleEmailChange={handleEmailChange}
+          handleSocialChange={handleSocialChange} // Pass handler for "Other Social"
           handleSubmit={handleSubmit}
           loading={loading}
         />
 
-        <Logos />
+        {/* <Logos /> */}
       </section>
 
       <Footer />

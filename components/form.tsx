@@ -10,8 +10,10 @@ import { containerVariants, itemVariants } from "@/lib/animation-variants";
 interface FormProps {
   name: string;
   email: string;
+  social: string; // Add "social" to the props
   handleNameChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEmailChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSocialChange: (e: ChangeEvent<HTMLInputElement>) => void; // Add handler for "social"
   handleSubmit: () => void;
   loading: boolean;
 }
@@ -19,8 +21,10 @@ interface FormProps {
 export default function Form({
   name,
   email,
+  social,
   handleNameChange,
   handleEmailChange,
+  handleSocialChange, // Add handler for "social"
   handleSubmit,
   loading,
 }: FormProps) {
@@ -47,6 +51,14 @@ export default function Form({
         />
       </motion.div>
       <motion.div variants={itemVariants}>
+        <Input
+          type="text"
+          placeholder="Your Other Social (Optional)"
+          value={social} // Bind "social" state
+          onChange={handleSocialChange} // Handle "social" input change
+        />
+      </motion.div>
+      <motion.div variants={itemVariants}>
         <EnhancedButton
           variant="expandIcon"
           Icon={FaArrowRightLong}
@@ -62,14 +74,14 @@ export default function Form({
         className="mt-4 flex w-full items-center justify-center gap-1 text-muted-foreground">
         <p>For any queries, reach out at </p>
         <Link
-          href="https://x.com/blakssh"
+          href="https://x.com/cadenbuild"
           rel="noopener noreferrer"
           target="_blank">
           <FaXTwitter className="h-4 w-4 transition-all duration-200 ease-linear hover:text-yellow-200" />
         </Link>
         or
         <Link
-          href="https://github.com/lakshaybhushan"
+          href="https://github.com/collinli2353"
           rel="noopener noreferrer"
           target="_blank">
           <FaGithub className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-yellow-200" />

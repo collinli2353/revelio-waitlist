@@ -25,6 +25,17 @@ export async function POST(request: Request) {
             },
           ],
         },
+        Socials: {
+          type: "rich_text",
+          rich_text: [
+            {
+              type: "text",
+              text: {
+                content: body?.social || "", // Add "Other Social" field
+              },
+            },
+          ],
+        },
       },
     });
 
