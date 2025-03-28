@@ -21,7 +21,7 @@ export default function CTA() {
       </motion.div>
 
       <motion.img
-        src="/revelio_logo.png"
+        src="/logo.png"
         alt="logo"
         className="mx-auto h-24 w-24"
         variants={itemVariants}
