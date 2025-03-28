@@ -12,7 +12,7 @@ export default function Header() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="fixed flex right-0 left-0 justify-between top-0 z-[50] m-4">
+      className="fixed left-0 right-0 top-0 z-[50] m-4 flex justify-between">
       {/* Buttons removed */}
     </motion.div>
   );

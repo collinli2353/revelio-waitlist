@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Revelio - Waitlist Form",
   description:
     "A waitlist for Revelio, AI-Powered Observability Automation for Radiology.",
+  icons: {
+    icon: "/revelio_logo.png",
+    shortcut: "/revelio_logo.png",
+    apple: "/revelio_logo.png",
+  },
 };
 
 export default function RootLayout({

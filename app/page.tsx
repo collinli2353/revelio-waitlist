@@ -8,6 +8,8 @@ import Logos from "@/components/logos";
 import Particles from "@/components/ui/particles";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "@/lib/animation-variants";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -121,7 +123,11 @@ export default function Home() {
 
         <CTA />
 
-        <div className="my-8 w-full max-w-4xl">
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          className="my-8 w-full max-w-4xl">
           <video
             src="/DemoVideoAll.mp4"
             autoPlay
@@ -130,7 +136,7 @@ export default function Home() {
             playsInline
             className="w-full rounded-lg shadow-lg"
           />
-        </div>
+        </motion.div>
 
         <Form
           name={name}
