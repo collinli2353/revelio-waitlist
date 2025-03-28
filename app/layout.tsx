@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/react";
+import StatCounter from "@/components/statcounter";
 
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         {children}
         <Toaster richColors position="top-center" />
         <Analytics />
+        <StatCounter />
       </body>
     </html>
   );
