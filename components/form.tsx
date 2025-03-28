@@ -53,7 +53,7 @@ export default function Form({
       <motion.div variants={itemVariants}>
         <Input
           type="text"
-          placeholder="Your Other Social (Optional)"
+          placeholder="Phone Number or X/twitter account (Optional)"
           value={social} // Bind "social" state
           onChange={handleSocialChange} // Handle "social" input change
         />
